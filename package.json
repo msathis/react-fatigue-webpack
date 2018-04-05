@@ -1,12 +1,11 @@
 {
     "name": "react-fatigue-webpack",
     "version": "1.0.1",
-    "description": "Module of modules and Makefile to reduce the amount of boilerplate when developing React components.",
-    "keywords": [
-        "react",
-        "babel"
-    ],
-    "author": "Eduardo Rabelo <oieduardorabelo@gmail.com> (https://github.com/oieduardorabelo)",
+    "description":
+        "Module of modules and Makefile to reduce the amount of boilerplate when developing React components.",
+    "keywords": ["react", "babel"],
+    "author":
+        "Eduardo Rabelo <oieduardorabelo@gmail.com> (https://github.com/oieduardorabelo)",
     "license": "MIT",
     "repository": {
         "type": "git",
@@ -18,7 +17,7 @@
         "@babel/plugin-proposal-object-rest-spread": "7.0.0-beta.44",
         "@babel/preset-env": "^7.0.0-beta.44",
         "@babel/preset-react": "7.0.0-beta.44",
-        "babel-cli": "^7.0.0-beta.3",
+        "@babel/cli": "^7.0.0-beta.44",
         "css-loader": "0.28.7",
         "file-loader": "1.1.5",
         "react": "16.1.1",
