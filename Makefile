@@ -18,7 +18,7 @@ help:
 
 build:
 	@echo "  $(P) build"
-	@$(BIN_DIR)/babel $(BUILD_FLAGS) src/index.js -o $(BUILD_DIR)/index.js
+	@$(BIN_DIR)/babel $(BUILD_FLAGS) src --out-dir $(BUILD_DIR)
 
 start:
 	@echo "  $(P) starting webpack-dev-server"
