@@ -1,4 +1,4 @@
-BIN_DIR ?= node_modules/.bin
+BIN_DIR ?= ../../node_modules/.bin
 BUILD_DIR ?= build
 
 WBP_IMG_LOADERS = --module-bind 'jpg=url-loader?limit=10000' --module-bind 'png=url-loader?limit=10000' --module-bind 'ico=url-loader?limit=10000'
