@@ -2,7 +2,7 @@ BIN_DIR ?= ../../node_modules/.bin
 BUILD_DIR ?= build
 
 WBP_IMG_LOADERS = --module-bind 'jpg=url-loader?limit=10000' --module-bind 'png=url-loader?limit=10000' --module-bind 'ico=url-loader?limit=10000'
-WBP_LOADERS ?= --module-bind 'js=babel-loader' --module-bind 'css=style-loader!css-loader' $(WBP_IMG_LOADERS)
+WBP_LOADERS ?= --module-bind 'js=babel-loader' --module-bind 'css=style-loader!css-loader?importLoader=1&modules&localIdentName=[path]___[name]__[local]___[hash:base64:5]' $(WBP_IMG_LOADERS)
 WBP_PATH ?= --content-base example
 WBP_PORT ?= --port 3000
 WBP_FLAGS ?= --progress --hot --inline --output-public-path /
@@ -19,6 +19,10 @@ help:
 build:
 	@echo "  $(P) build"
 	@$(BIN_DIR)/babel $(BUILD_FLAGS) src --out-dir $(BUILD_DIR)
+
+watch:
+	@echo "  $(P) watch"
+	onchange 'src/**' -- make build
 
 start:
 	@echo "  $(P) starting webpack-dev-server"
