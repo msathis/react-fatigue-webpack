@@ -22,7 +22,7 @@ build:
 
 watch:
 	@echo "  $(P) watch"
-	onchange 'src/**' -- make build
+	@$(BIN_DIR)/babel $(BUILD_FLAGS) --watch src --out-dir $(BUILD_DIR)
 
 start:
 	@echo "  $(P) starting webpack-dev-server"
