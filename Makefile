@@ -7,6 +7,7 @@ WBP_PATH ?= --content-base example
 WBP_PORT ?= --port 3000
 WBP_FLAGS ?= --progress --hot --inline --output-public-path /
 WBP_ENTRY ?= example/index.js
+PLUGINS ?= "babel-plugin-react-css-modules,@babel/plugin-proposal-class-properties,@babel/plugin-proposal-object-rest-spread"
 
 P="\\033[34m[+]\\033[0m"
 
@@ -18,14 +19,14 @@ help:
 
 build:
 	@echo "  $(P) build"
-	@$(BIN_DIR)/babel $(BUILD_FLAGS) src --out-dir $(BUILD_DIR)
+	@$(BIN_DIR)/babel $(BUILD_FLAGS) src --out-dir $(BUILD_DIR) --copy-files
 
 watch:
 	@echo "  $(P) watch"
-	@$(BIN_DIR)/babel $(BUILD_FLAGS) --watch src --out-dir $(BUILD_DIR)
+	@$(BIN_DIR)/babel $(BUILD_FLAGS) --watch src --out-dir $(BUILD_DIR) --copy-files
 
 start:
 	@echo "  $(P) starting webpack-dev-server"
 	@$(BIN_DIR)/webpack-dev-server $(WBP_ENTRY) $(WBP_LOADERS) $(WBP_PATH) $(WBP_FLAGS) $(WBP_PORT)
 
-.PHONY: build start help
+.PHONY: build watch start help
